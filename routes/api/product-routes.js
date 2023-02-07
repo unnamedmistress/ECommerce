@@ -39,13 +39,6 @@ router.get("/:id", async (req, res) => {
 // Create a new product
 router.post("/", async (req, res) => {
   try {
-    // req.body should have this data:
-    // {
-    //   product_name: "Basketball",
-    //   price: 200.00,
-    //   stock: 3,
-    //   tagIds: [1, 2, 3, 4]
-    // }
     const newProduct = await Product.create(req.body);
 
     // If there are tags, create pairings in ProductTag
